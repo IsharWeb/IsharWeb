@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Essential Meta Tags for Responsive Design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberBoyAyush - Portfolio</title>
+    
+    <!-- External Resources & CDN Links -->
+    <!-- These provide fonts, icons, and styling frameworks -->
+    <!-- Favicon -->
+    <link rel="icon" href="profile.png" type="image/png">
+    
+    <!-- Google Font - Bellota -->
+    <link href="https://fonts.googleapis.com/css2?family=Bellota:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Heroicons (for better icons) -->
+    <script src="https://unpkg.com/@heroicons/v2/outline/24/esm/index.js"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Tailwind Configuration -->
+    <!-- Customize Tailwind's default styles and add custom colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    // Custom font family - Using Bellota for unique typography
+                    fontFamily: {
+                        bellota: ['Bellota', 'cursive'],
+                    },
+                    // Custom color scheme - Can be modified to match your brand
+                    colors: {
+                        primary: '#3B82F6',    // Bright Blue
+                        secondary: '#1E40AF',   // Dark Blue
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Particles.js for background animation -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <!-- Custom Animations and Styles -->
+    <style>
+        /* Gradient Text Animation
+           Creates a moving gradient effect for text elements */
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .animate-gradient {
+            background-size: 200% auto;
+            animation: gradient 4s linear infinite;
+        }
+
+        /* Background Grid Pattern
+           Creates a subtle grid overlay effect */
+        .bg-grid-white {
+            background-image: linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
+                             linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px);
+        }
+
+        /* Progress Bar Animation
+           Used in the skills section to show proficiency levels */
+        .skill-progress {
+            @apply w-full h-2 bg-gray-200 rounded-full overflow-hidden;
+        }
+        .skill-progress-bar {
+            @apply h-full bg-primary rounded-full transition-all duration-500;
+        }
+
+        /* Floating Particles Animation
+           Creates interactive background particles */
+        .animated-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .animated-bg span {
+            position: absolute;
+            display: block;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            animation: float 25s linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                opacity: 0;
+                transform: translateY(0) rotate(0deg);
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-1000px) rotate(720deg);
+            }
+        }
+
+        #particles-js {
+            position: absolute; /* Changed from fixed to absolute for header context */
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1; /* Ensure it's behind hero content */
+        }
+        
+        /* Hero Content Stacking */
+        .hero-content {
+            position: relative;
+            z-index: 2; /* Ensure it's above particles */
+        }
+        
+        /* Smooth Scrolling Behavior
+           Enables smooth scrolling when clicking navigation links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Overflow Control & Basic Layout */
+        html, body {
+            @apply overflow-x-hidden min-h-screen;
+            position: relative; /* Needed for absolute positioning context */
+        }
+
+        body {
+            @apply bg-gray-50;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            @apply flex-grow relative z-10; /* Ensure main content is above fixed backgrounds */
+        }
+
+        footer {
+             @apply relative z-10; /* Ensure footer is above fixed backgrounds */
+        }
+
+        /* Consolidated Site Container */
+        .site-container {
+            @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full;
+        }
+
+        /* Section Padding */
+        .section-padding {
+            @apply py-16 md:py-24;
+        }
+
+        /* Ensure sections take full width within the container */
+        .section-content {
+            @apply w-full;
+        }
+
+        /* Background Bubbles Style */
+        .animated-bg {
+            @apply fixed inset-0; /* Keep this fixed for overall background effect */
+            height: 100vh;
+            pointer-events: none;
+            z-index: 0; /* Behind everything */
+        }
+
+        .animated-bg span {
+            position: absolute;
+            display: block;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            animation: float 25s linear infinite;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 640px) {
+            .site-container { /* Use site-container for mobile padding */
+                @apply px-4;
+            }
+            
+            h1 {
+                @apply text-4xl;
+            }
+            
+            .skill-progress {
+                @apply w-full;
+            }
+
+            .section-padding {
+                 @apply py-12 md:py-16; /* Reduce padding on mobile */
+            }
+        }
+
+        /* Remove conflicting/redundant rules below this line if they exist */
+        /* Removed old .container, .content-wrapper, .section-wrapper definitions */
+
+    </style>
+</head>
+
+<body class="font-bellota text-gray-800">
+    <!-- Hero Section: The main landing area -->
+   <header class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white overflow-hidden">
+    <!-- Background Effects Layer -->
+    <div id="particles-js"></div>
+    <div class="animated-bg" id="animated-bg"></div>
+    <div class="absolute inset-0 bg-grid-white/[0.05] bg-[size:60px_60px]"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/50"></div>
+
+    <!-- Content Layer -->
+    <div class="hero-content site-container relative flex flex-col items-center justify-center min-h-screen py-20">
+        <!-- Profile Image with Glow Effect -->
+        <div class="relative mb-8 animate-fade-in">
+            <div class="absolute inset-0 bg-blue-500/30 rounded-full blur-3xl transform animate-pulse"></div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+            <img 
+                src="profile.png" 
+                alt="Muhammad Ishar Profile"
+                class="relative w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-white/50 shadow-2xl object-cover transform hover:scale-105 transition-all duration-300"
+            >
+        </div>
+
+        <!-- Name and Title with Gradient Effect -->
+        <div class="relative">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent animate-gradient">
+                Muhammad Ishar
+            </h1>
+            <div class="absolute -inset-1 blur-lg bg-gradient-to-r from-blue-600 to-blue-400 opacity-20"></div>
+        </div>
+
+        <!-- Typing Effect Text -->
+        <p class="text-xl md:text-2xl text-blue-200 mb-8 text-center typewriter">
+            Web Developer & Full Stack Learner <span class="inline-block animate-bounce">👨‍💻</span>
+        </p>
+
+        <!-- Call-to-Action Buttons -->
+        <div class="flex flex-wrap gap-4 justify-center mt-8">
+            <a href="#projects" 
+               class="group px-8 py-3 bg-white text-blue-900 rounded-full font-semibold hover:bg-blue-100 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                <span class="flex items-center">
+                    View Projects
+                    <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                </span>
+            </a>
+            <a href="#contact" 
+               class="group px-8 py-3 bg-transparent border-2 border-white rounded-full font-semibold hover:bg-white/10 transform hover:scale-105 transition-all duration-300">
+                <span class="flex items-center">
+                    Contact Me
+                    <i class="fas fa-envelope ml-2 group-hover:scale-110 transition-transform"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center z-10">
+        <span class="text-sm text-white/70 mb-2">Scroll Down</span>
+        <div class="animate-bounce">
+            <svg class="w-6 h-6 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </div>
+</header>
+
+
+    <!-- Main Content Area -->
+    <main class="relative z-10 bg-gray-50">
+    <div class="site-container py-12">
+
+        <!-- About Me -->
+        <section class="section-content section-padding">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-8 relative">
+                    <span class="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">About Me</span>
+                </h2>
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <p class="text-lg text-center leading-relaxed">
+                        Hi! I'm <strong class="text-primary">Muhammad Ishar</strong> from 
+                        <strong>Shewa, Pakistan</strong>. I'm a self-taught full-stack developer skilled in 
+                        <strong>HTML, CSS, JavaScript, React, Node.js, and MongoDB</strong>. 
+                        I specialize in creating modern, SEO-optimized web apps and affiliate projects.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="section-content section-padding">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-8">
+                    <span class="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">My Skills</span>
+                </h2>
+                <div class="bg-white rounded-xl shadow-lg p-8 space-y-6">
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-semibold">HTML, CSS, JS</span>
+                            <span class="text-primary">95%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="width: 95%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-semibold">React & Tailwind</span>
+                            <span class="text-primary">90%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-semibold">Node.js & MongoDB</span>
+                            <span class="text-primary">85%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="section-content section-padding">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-12">
+                    <span class="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">Featured Projects</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <!-- Example Project -->
+                    <div class="group bg-white rounded-xl shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <div class="relative">
+                            <div class="h-48 bg-gradient-to-r from-green-500 to-teal-600 flex items-center justify-center">
+                                <i class="fas fa-laptop-code text-6xl text-white/90"></i>
+                            </div>
+                            <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 flex items-center justify-center space-x-4 transition-opacity">
+                                <a href="https://github.com/IsharWeb" class="p-3 bg-white/10 hover:bg-white/25 rounded-full text-white">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-800">Travel Website</h3>
+                            <p class="text-gray-600 mb-4 text-sm">Full-stack travel website with MongoDB database, weather & flight APIs (coming soon).</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-medium">React</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-medium">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="text-center mt-12">
+                    <a href="https://github.com/IsharWeb" class="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded-full hover:bg-gray-800">
+                        <span class="mr-2">View More Projects</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools -->
+        <section class="section-content section-padding">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-8">
+                    <span class="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">Tools I Use</span>
+                </h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                    <div class="tool"><i class="fab fa-github text-4xl"></i><p>GitHub</p></div>
+                    <div class="tool"><i class="fab fa-react text-4xl"></i><p>React</p></div>
+                    <div class="tool"><i class="fab fa-node text-4xl"></i><p>Node.js</p></div>
+                    <div class="tool"><i class="fas fa-database text-4xl"></i><p>MongoDB</p></div>
+                    <div class="tool"><i class="fas fa-code text-4xl"></i><p>VS Code</p></div>
+                    <div class="tool"><i class="fab fa-wordpress text-4xl"></i><p>WordPress</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section id="contact" class="section-content section-padding">
+            <div class="max-w-4xl mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-8">
+                    <span class="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">Get In Touch</span>
+                </h2>
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-6">
+                        <input type="text" name="name" placeholder="Name" class="form-control" required>
+                        <input type="email" name="email" placeholder="Email" class="form-control" required>
+                        <textarea name="message" rows="4" placeholder="Message" class="form-control" required></textarea>
+                        <button type="submit" class="bg-primary text-white px-6 py-3 rounded-full">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Links -->
+        <section class="section-content section-padding">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-8">
+                    <span class="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">Contact Info</span>
+                </h2>
+                <div class="bg-white rounded-xl shadow-lg p-8 text-center grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                    <a href="https://github.com/IsharWeb" target="_blank"><i class="fab fa-github text-4xl"></i></a>
+                    <a href="tel:+923285360414"><i class="fas fa-phone-alt text-4xl text-green-600"></i><p class="text-sm mt-2">0328 5360414</p></a>
+                    <a href="mailto:isharwebdeveloper@gmail.com"><i class="fas fa-envelope text-4xl"></i></a>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+
+
+    <!-- Footer Section -->
+    <footer class="relative z-10 bg-gray-900 text-white py-8">
+        <div class="site-container">
+            <p class="text-sm opacity-75 text-center">
+                Made with ❤️ by 
+                <a href="https://github.com/CyberBoyAyush" 
+                   class="text-primary hover:text-secondary transition-colors duration-300">
+                    CyberBoyAyush
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Functionality -->
+    <script>
+        // Background Animation Functions
+        /* Creates floating bubble effect in the background
+           Modify bubbleCount and size for different density */
+        function createBubbles() {
+            const section = document.getElementById('animated-bg');
+            const bubbleCount = 15;
+
+            for(let i = 0; i < bubbleCount; i++) {
+                const bubble = document.createElement('span');
+                const size = Math.random() * 60 + 20; // Random size between 20 and 80
+                
+                bubble.style.width = `${size}px`;
+                bubble.style.height = `${size}px`;
+                bubble.style.left = `${Math.random() * 100}%`;
+                bubble.style.animationDelay = `${Math.random() * 10}s`;
+                bubble.style.animationDuration = `${Math.random() * 20 + 15}s`;
+                
+                section.appendChild(bubble);
+            }
+        }
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', createBubbles);
+
+        // Particles.js Configuration
+        /* Customizes the interactive particle background
+           Adjust values to change particle behavior */
+        particlesJS('particles-js',
+            {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#ffffff"
+                    },
+                    "shape": {
+                        "type": "circle"
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": true
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#ffffff",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 2,
+                        "direction": "none",
+                        "random": true,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    }
+                },
+                "retina_detect": true
+            }
+        );
+
+        // Smooth Scrolling Navigation
+        /* Enables smooth scrolling when clicking navigation links */
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

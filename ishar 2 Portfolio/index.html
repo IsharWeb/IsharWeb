@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- =====BOX ICONS===== -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Muhammad Ishar</title>
+    <style>
+        .skills__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill-group h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: #333;
+        }
+
+        .skill-group span {
+            display: block;
+            font-size: 0.95rem;
+            color: #555;
+            margin: 2px 0;
+        }
+
+        /* ===== IsharWeb Repo Portfolio ===== */
+        .portfolio {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .repo__container {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .repo__card {
+            max-width: 600px;
+            padding: 2rem;
+            background: #f9f9f9;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .repo__title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .repo__text {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <!--===== HEADER =====-->
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div>
+                <a href="#" class="nav__logo">IsharWeb</a>
+            </div>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                    <!--                        <li class="nav__item"><a href="#work" class="nav__link">Portfolio</a></li>-->
+                    <li class="nav__item"><a href="#blog" class="nav__link">Blog</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="l-main">
+        <!--===== HOME =====-->
+        <section class="home bd-grid" id="home">
+            <div class="home__data">
+                <h1 class="home__title">
+                    Hi,<br>I'm <span class="home__title-color">Muhammad Ishar</span><br> Web Developer
+                </h1>
+                <a href="#" class="button">Hire me</a>
+            </div>
+
+            <div class="home__social">
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/ishar-web-259591316/" class="home__social-icon" target="_blank"
+                    aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7.5 0h3.7v2.1h.1c.52-.98 1.78-2.1 3.67-2.1 3.93 0 4.65 2.59 4.65 5.96V24h-4v-7.98c0-1.9-.03-4.35-2.65-4.35-2.65 0-3.06 2.07-3.06 4.2V24h-4V8z" />
+                    </svg>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/isharweb" class="home__social-icon" target="_blank" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.38 7.86 10.91.58.1.79-.25.79-.56v-2.13c-3.2.7-3.88-1.37-3.88-1.37-.53-1.35-1.3-1.7-1.3-1.7-1.06-.73.08-.72.08-.72 1.18.08 1.8 1.22 1.8 1.22 1.04 1.78 2.72 1.27 3.38.97.1-.75.4-1.28.73-1.58-2.55-.29-5.23-1.27-5.23-5.64 0-1.25.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18A10.92 10.92 0 0 1 12 6.88c.97.01 1.95.13 2.86.38 2.19-1.5 3.15-1.18 3.15-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.09 0 4.39-2.68 5.35-5.24 5.63.42.36.8 1.07.8 2.15v3.2c0 .31.21.66.8.56A10.998 10.998 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="home__img">
+                <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <mask id="mask0" mask-type="alpha">
+                        <path
+                            d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z" />
+                    </mask>
+                    <g mask="url(#mask0)">
+                        <path
+                            d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z" />
+                        <image class="home__blob-img" x="50" y="60" href="assets/img/prefil.gif" />
+                    </g>
+                </svg>
+            </div>
+        </section>
+
+        <!--===== ABOUT =====-->
+        <section class="about section " id="about">
+            <h2 class="section-title">About</h2>
+
+            <div class="about__container bd-grid">
+                <div class="about__img">
+                    <img src="assets/img/prefil1.jpg" alt="">
+                </div>
+
+                <div>
+                    <h2 class="about__subtitle">I'm Muhammad Ishar</h2>
+                    <p class="about__text">
+
+                        I am Muhammad Ishar, a passionate and self-taught Web Developer from Shewa Swabi, Khyber
+                        Pakhtunkhwa, Pakistan. I specialize in building responsive, SEO-optimized websites and web
+                        applications using modern technologies like HTML, CSS, JavaScript, React, Redux Toolkit, and
+                        TypeScript. I also work with backend tools such as Express.js and MongoDB, and I have experience
+                        with WordPress and affiliate marketing.<br><br>
+
+                        I am currently pursuing my 12th-grade education with a focus on Computer Science. Despite my
+                        young age, I have worked on multiple real-world projects, including travel websites, landing
+                        pages, and eCommerce designs. My goal is to build clean, high-performing websites that help
+                        businesses grow online.<br><br>
+
+                        I am also skilled in SEO, Git, GitHub, and content strategy, and I focus on delivering
+                        fast-loading, mobile-friendly websites that rank well on Google. I believe in continuous
+                        learning, and I amm always ready to take on new challenges in web development and online
+                        entrepreneurship.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!--===== SKILLS =====-->
+        <section class="skills section" id="skills">
+            <h2 class="section-title">Skills</h2>
+
+            <div class="skills__container bd-grid">
+                <div>
+                    <h2 class="skills__subtitle">Professional Skills</h2>
+                    <p class="skills__text">
+                        Below are the technologies I work with regularly as a web developer.
+                    </p>
+
+                    <div class="skills__grid">
+                        <div class="skill-group">
+                            <h4>Languages</h4>
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>TypeScript</span>
+                            <span>Python</span>
+                            <span>Java (Basics)</span>
+                        </div>
+
+                        <div class="skill-group">
+                            <h4>Frameworks</h4>
+                            <span>React.js</span>
+                            <span>Redux Toolkit</span>
+                            <span>Node.js</span>
+                            <span>Express.js</span>
+                            <span>Vite</span>
+                        </div>
+
+                        <div class="skill-group">
+                            <h4>Databases</h4>
+                            <span>MongoDB</span>
+                            <span>MySQL</span>
+                            <span>Firebase</span>
+                        </div>
+
+                        <div class="skill-group">
+                            <h4>Visualization</h4>
+                            <span>Tableau</span>
+                            <span>Power BI</span>
+                            <span>Google Data Studio</span>
+                            <span>Excel</span>
+                        </div>
+
+                        <div class="skill-group">
+                            <h4>ML Libraries</h4>
+                            <span>NumPy</span>
+                            <span>Pandas</span>
+                            <span>Scikit-learn</span>
+                            <span>Streamlit</span>
+                        </div>
+
+                        <div class="skill-group">
+                            <h4>Tools</h4>
+                            <span>Git</span>
+                            <span>GitHub</span>
+                            <span>WordPress</span>
+                            <span>VS Code</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <img src="assets/img/professional%20skills.gif" alt="Skills" class="skills__img">
+                </div>
+            </div>
+        </section>
+
+        <!--===== WORK =====-->
+        <section class="work section" id="work">
+            <h2 class="section-title">Work</h2>
+
+            <div class="work__container bd-grid">
+                <a href="" class="work__img">
+                    <img src="assets/img/viz3.png" alt="">
+                </a>
+                <a href="" class="work__img">
+                    <img src="assets/img/viz4.png" alt="">
+                </a>
+                <a href="" class="work__img">
+                    <img src="assets/img/viz5.png" alt="">
+                </a>
+                <a href="" class="work__img">
+                    <img src="assets/img/viz1.png" alt="">
+                </a>
+                <a href="" class="work__img">
+                    <img src="assets/img/viz2.png" alt="">
+                </a>
+                <a href="" class="work__img">
+                    <img src="assets/img/crc.png" alt="">
+                </a>
+            </div>
+        </section>
+
+
+        <!-----------------blog------------------->
+
+        <section class="work section" id="work">
+            <h2 class="section-title">My All Projects</h2>
+            <div class="grid">
+
+                <!-- JavaScript Projects -->
+                <div class="card">
+                    <div class="card_img">
+                        <svg width="40" height="40" viewBox="0 0 128 128">
+                            <path fill="#F7DF1E" d="M1.408 1.408h125.184v125.185H1.408z" />
+                            <path
+                                d="M108.687 97.44c-2.7 5.578-7.94 9.65-15.878 9.65-10.494 0-17.153-5.525-17.153-19.338V56.67h11.37v30.857c0 7.388 3.15 10.716 8.245 10.716 5.27 0 8.548-3.667 8.548-10.716V56.67h11.37v38.18zm-41.012 9.65c-3.8 0-6.536-.747-8.608-1.653l1.39-9.963c1.51.547 3.593 1.093 6.126 1.093 4.073 0 6.837-2.08 6.837-6.085 0-3.35-2.41-5.27-7.55-7.55l-2.592-1.12c-7.49-3.19-12.455-7.457-12.455-15.877 0-7.91 6.05-13.95 15.503-13.95 3.9 0 6.718.62 8.96 1.39l-1.39 9.653c-1.28-.465-3.34-.96-6.178-.96-4.497 0-6.593 2.408-6.593 5.27 0 3.687 2.593 5.223 8.33 7.697l2.592 1.12c8.83 3.8 12.788 8.172 12.788 15.992.013 8.964-6.978 14.887-16.575 14.887z" />
+                        </svg>
+                    </div>
+                    <div class="card_body">
+                        <h2 class="card_title">JavaScript Projects</h2>
+                        <p>Small apps using DOM manipulation, event handling, and logic.</p>
+                        <a href="https://github.com/IsharWeb/JavaScript" class="read_more" target="_blank">View
+                            repository</a>
+                    </div>
+                </div>
+
+                <!-- React Projects -->
+                <div class="card">
+                    <div class="card_img">
+                        <svg viewBox="0 0 128 128" width="40" height="40">
+                            <g fill="#61DAFB">
+                                <circle cx="64" cy="64" r="11.4" />
+                                <path
+                                    d="M64 97.6c-21.8 0-41.2-4.8-54.2-12.6-3.4-2.1-6.2-4.4-8.4-6.9 2.2-2.5 5-4.8 8.4-6.9C22.8 47.2 42.2 42.4 64 42.4c21.8 0 41.2 4.8 54.2 12.6 3.4 2.1 6.2 4.4 8.4 6.9-2.2 2.5-5 4.8-8.4 6.9-13 7.8-32.4 12.6-54.2 12.6z" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="card_body">
+                        <h2 class="card_title">React Projects</h2>
+                        <p>React-based UI projects using Vite and modern tooling.</p>
+                        <a href="https://github.com/IsharWeb/React_All_Project" class="read_more" target="_blank">View
+                            repository</a>
+                    </div>
+                </div>
+
+                <!-- C++ Projects -->
+                <div class="card">
+                    <div class="card_img">
+                        <svg viewBox="0 0 128 128" width="40" height="40">
+                            <path fill="#00599C"
+                                d="M64 0L0 32v64l64 32 64-32V32L64 0zm0 117.4L8.6 85V43L64 10.6 119.4 43v42L64 117.4z" />
+                            <path fill="#004482" d="M64 15.3L16.7 40.5v47L64 112.7l47.3-25.2v-47L64 15.3z" />
+                            <path fill="#FFFFFF"
+                                d="M86.3 76.5H78V68.2h-8.3v8.3H61.5v8.3h8.3v8.3H78v-8.3h8.3zM56.5 76.5H48V68.2h-8.3v8.3H31.5v8.3h8.3v8.3H48v-8.3h8.3z" />
+                        </svg>
+                    </div>
+                    <div class="card_body">
+                        <h2 class="card_title">C++ Code Collection</h2>
+                        <p>Data structures, logic, and algorithms implemented in C++.</p>
+                        <a href="https://github.com/IsharWeb/Cpp" class="read_more" target="_blank">View repository</a>
+                    </div>
+                </div>
+
+                <!-- Python Projects -->
+                <div class="card">
+                    <div class="card_img">
+                        <svg viewBox="0 0 128 128" width="40" height="40">
+                            <path fill="#306998"
+                                d="M63.3 0C27.7 0 34.7 18.6 34.7 18.6l.2 17.2h29.3v5.6H27.3s-21.8-.3-21.8 30.2 19.3 31 19.3 31h11.3v-16.4s-.6-19.3 17.2-19.3h30.2s18.2 0 18.2-17.5V18.6S103 0 63.3 0z" />
+                            <path fill="#FFD43B"
+                                d="M64.7 128c35.6 0 28.6-18.6 28.6-18.6l-.2-17.2H63.8v-5.6h36.9s21.8.3 21.8-30.2S103.3 26.2 103.3 26.2H92v16.4s.6 19.3-17.2 19.3H44.6S26.4 62 26.4 79.5v29.9S25 128 64.7 128z" />
+                        </svg>
+                    </div>
+                    <div class="card_body">
+                        <h2 class="card_title">Python Projects</h2>
+                        <p>Scripts and tools in Python for automation, utilities, and data tasks.</p>
+                        <a href="https://github.com/IsharWeb/Python" class="read_more" target="_blank">View
+                            repository</a>
+                    </div>
+                </div>
+
+                <!-- Backend JS -->
+                <div class="card">
+                    <div class="card_img">
+                        <svg viewBox="0 0 128 128" width="40" height="40">
+                            <path fill="#68A063"
+                                d="M64 0L0 32v64l64 32 64-32V32L64 0zm0 117.4L8.6 85V43L64 10.6 119.4 43v42L64 117.4z" />
+                            <path fill="#FFFFFF" d="M78.6 80.3L63.9 92.5 49.3 80.3l5.8-5 8.8 7.3 8.9-7.3z" />
+                        </svg>
+                    </div>
+                    <div class="card_body">
+                        <h2 class="card_title">Backend‑Js</h2>
+                        <p>Node.js & Express backend logic, APIs and small server-side tools.</p>
+                        <a href="https://github.com/IsharWeb/Backend-Js" class="read_more" target="_blank">View
+                            repository</a>
+                    </div>
+                </div>
+
+                <!-- IsharWeb Portfolio -->
+                <div class="card">
+                    <div class="card_img">
+                        <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="#4A90E2" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 12l2-2-2-2"></path>
+                            <path d="M21 12l-2-2 2-2"></path>
+                            <path d="M12 5v14"></path>
+                            <circle cx="12" cy="12" r="10"></circle>
+                        </svg>
+                    </div>
+                    <div class="card_body">
+                        <h2 class="card_title">IsharWeb Portfolio</h2>
+                        <p>Main repo with more website and code experiments.</p>
+                        <a href="https://github.com/IsharWeb/IsharWeb" class="read_more" target="_blank">View
+                            repository</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--            --------------------My latest projects section----------------->
+
+        <!--===== CONTACT =====-->
+        <section class="contact section" id="contact">
+            <h2 class="section-title">Contact</h2>
+
+            <div class="contact__container bd-grid">
+                <form action="https://formsubmit.co/muhammadisharjob@gmail.com" method="POST" class="contact__form">
+                    <input type="text" name="name" placeholder="Your Name" class="contact__input" required>
+                    <input type="email" name="email" placeholder="Your Email" class="contact__input" required>
+                    <textarea name="message" placeholder="Your Message" rows="6" class="contact__input"
+                        required></textarea>
+
+                    <!-- Optional: Prevent spam & redirect -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html">
+
+                    <input type="submit" value="Send Message" class="contact__button button">
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!--===== FOOTER =====-->
+    <footer class="footer">
+        <p class="footer__title">Muhammad Ishar</p>
+
+        <div class="footer__social">
+            <a href="https://www.linkedin.com/in/ishar-web-259591316/" target="_blank" class="footer__icon">
+                <i class='bx bxl-linkedin'></i>
+            </a>
+            <a href="https://github.com/IsharWeb" target="_blank" class="footer__icon">
+                <i class='bx bxl-github'></i>
+            </a>
+            <!-- Add more only if needed -->
+            <!-- <a href="https://twitter.com/your_handle" target="_blank" class="footer__icon">
+            <i class='bx bxl-twitter'></i>
+        </a> -->
+        </div>
+
+        <p class="footer__copy">&#169; Muhammad Ishar. All rights reserved.</p>
+    </footer>
+
+    <!--===== SCROLL REVEAL =====-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--===== MAIN JS =====-->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
