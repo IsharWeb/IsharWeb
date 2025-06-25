@@ -19,7 +19,8 @@ I specialize in crafting **responsive**, **SEO-optimized** websites and bringing
 ## 📂 Live Projects on GitHub Pages:
 
 👉 **Click here to view all my projects live:**  
-[https://isharweb.github.io/IsharWeb/](https://isharweb.github.io/IsharWeb/)
+[https://isharweb.github.io/IsharWeb/](https://isharweb.github.io/IsharWeb/){:target="_blank"}
+
 
 👉 **Click to View Each Project Live**
 
