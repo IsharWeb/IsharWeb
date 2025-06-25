@@ -5,12 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muhammad Ishar - Portfolio</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
-    <!-- Scroll Button -->
+
+    <!-- Scroll Up Button -->
     <div class="scroll-up-btn">
         <i class="fas fa-angle-up"></i>
     </div>
@@ -18,7 +30,7 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="max-width">
-            <div class="logo"><a href="#">Portfo<span>lio.</span></a></div>
+            <div class="logo"><a href="#">Ishar<span>Web</span></a></div>
             <ul class="menu">
                 <li><a href="#home" class="menu-btn">Home</a></li>
                 <li><a href="#about" class="menu-btn">About</a></li>
@@ -32,27 +44,28 @@
         </div>
     </nav>
 
-    <!-- Home -->
+    <!-- Home Section -->
     <section class="home" id="home">
         <div class="max-width">
             <div class="home-content">
                 <div class="text-1">Hello, my name is</div>
                 <div class="text-2">Muhammad Ishar</div>
-                <div class="text-3">And I'm a <span class="typing">Web Developer</span></div>
+<div class="text-3">And I'm a <span class="typing"></span></div>
                 <a href="mailto:muhammadisharjob@gmail.com">Hire me</a>
             </div>
         </div>
     </section>
 
-    <!-- About -->
+    <!-- About Section -->
     <section class="about" id="about">
         <div class="max-width">
             <h2 class="title">About me</h2>
             <div class="about-content">
                 <div class="column left">
-                    <img src="assets/img/ishar.jpg" alt="Muhammad Ishar">
+                    <img src="images/banner.jpg" alt="Muhammad Ishar">
                 </div>
                 <div class="column right">
+                    
                     <div class="text">I'm Ishar and I'm a Web Developer</div>
                     <p>I’m currently studying Computer Science and actively building web projects in React, Node.js, and MongoDB. I aim to become a full-stack developer and help businesses build digital solutions.</p>
                     <a href="#">Download CV</a>
@@ -61,10 +74,10 @@
         </div>
     </section>
 
-    <!-- Services -->
+    <!-- Services Section -->
     <section class="services" id="services">
         <div class="max-width">
-            <h2 class="title">My services</h2>
+            <h2 class="title">My Services</h2>
             <div class="serv-content">
                 <div class="card">
                     <div class="box">
@@ -91,58 +104,28 @@
         </div>
     </section>
 
-    <!-- Skills -->
+    <!-- Skills Section -->
     <section class="skills" id="skills">
         <div class="max-width">
-            <h2 class="title">My skills</h2>
+            <h2 class="title">My Skills</h2>
             <div class="skills-content">
                 <div class="column left">
                     <div class="text">My creative skills & experiences.</div>
-                    <p>I specialize in front-end development using HTML, CSS, JavaScript, and React. I also have experience with backend tools like Node.js, Express, and databases such as MongoDB and MySQL. I love creating clean, user-friendly websites that solve real problems.</p>
+                    <p>I specialize in front-end development using HTML, CSS, JavaScript, and React. I also have experience with backend tools like Node.js, Express, and databases such as MongoDB and MySQL.</p>
                     <a href="#">Read more</a>
                 </div>
                 <div class="column right">
-                    <div class="bars">
-                        <div class="info">
-                            <span>HTML</span>
-                            <span>95%</span>
-                        </div>
-                        <div class="line html"></div>
-                    </div>
-                    <div class="bars">
-                        <div class="info">
-                            <span>CSS</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="line css"></div>
-                    </div>
-                    <div class="bars">
-                        <div class="info">
-                            <span>JavaScript</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="line js"></div>
-                    </div>
-                    <div class="bars">
-                        <div class="info">
-                            <span>React</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="line react"></div>
-                    </div>
-                    <div class="bars">
-                        <div class="info">
-                            <span>Node.js</span>
-                            <span>75%</span>
-                        </div>
-                        <div class="line node"></div>
-                    </div>
+                    <div class="bars"><div class="info"><span>HTML</span><span>95%</span></div><div class="line html"></div></div>
+                    <div class="bars"><div class="info"><span>CSS</span><span>90%</span></div><div class="line css"></div></div>
+                    <div class="bars"><div class="info"><span>JavaScript</span><span>85%</span></div><div class="line js"></div></div>
+                    <div class="bars"><div class="info"><span>React</span><span>90%</span></div><div class="line react"></div></div>
+                    <div class="bars"><div class="info"><span>Node.js</span><span>75%</span></div><div class="line node"></div></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact -->
+    <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="max-width">
             <h2 class="title">Contact me</h2>
@@ -151,49 +134,21 @@
                     <div class="text">Get in Touch</div>
                     <p>You can contact me via email or LinkedIn for job opportunities or collaborations.</p>
                     <div class="icons">
-                        <div class="row">
-                            <i class="fas fa-user"></i>
-                            <div class="info">
-                                <div class="head">Name</div>
-                                <div class="sub-title">Muhammad Ishar</div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div class="info">
-                                <div class="head">Address</div>
-                                <div class="sub-title">Shewa, Swabi, Khyber Pakhtunkhwa, Pakistan</div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <i class="fas fa-envelope"></i>
-                            <div class="info">
-                                <div class="head">Email</div>
-                                <div class="sub-title">muhammadisharjob@gmail.com</div>
-                            </div>
-                        </div>
+                        <div class="row"><i class="fas fa-user"></i><div class="info"><div class="head">Name</div><div class="sub-title">Muhammad Ishar</div></div></div>
+                        <div class="row"><i class="fas fa-map-marker-alt"></i><div class="info"><div class="head">Address</div><div class="sub-title">Shewa, Swabi, Pakistan</div></div></div>
+                        <div class="row"><i class="fas fa-envelope"></i><div class="info"><div class="head">Email</div><div class="sub-title">muhammadisharjob@gmail.com</div></div></div>
                     </div>
                 </div>
                 <div class="column right">
                     <div class="text">Message me</div>
                     <form action="mailto:muhammadisharjob@gmail.com" method="POST">
                         <div class="fields">
-                            <div class="field name">
-                                <input type="text" placeholder="Name" required>
-                            </div>
-                            <div class="field email">
-                                <input type="email" placeholder="Email" required>
-                            </div>
+                            <div class="field name"><input type="text" placeholder="Name" required></div>
+                            <div class="field email"><input type="email" placeholder="Email" required></div>
                         </div>
-                        <div class="field">
-                            <input type="text" placeholder="Subject" required>
-                        </div>
-                        <div class="field textarea">
-                            <textarea cols="30" rows="10" placeholder="Message.." required></textarea>
-                        </div>
-                        <div class="button-area">
-                            <button type="submit">Send message</button>
-                        </div>
+                        <div class="field"><input type="text" placeholder="Subject" required></div>
+                        <div class="field textarea"><textarea cols="30" rows="10" placeholder="Message.." required></textarea></div>
+                        <div class="button-area"><button type="submit">Send message</button></div>
                     </form>
                 </div>
             </div>
@@ -202,10 +157,16 @@
 
     <!-- Footer -->
     <footer>
-        <span>Created By <a href="#">Muhammad Ishar</a> | <span class="far fa-copyright"></span> 2025 All rights reserved.</span>
+        <span>Created By <a href="#">Muhammad Ishar</a> | © 2025 All rights reserved.</span>
     </footer>
 
-    <!-- JS -->
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <!-- Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <!-- Main JS -->
     <script src="script.js"></script>
 </body>
 

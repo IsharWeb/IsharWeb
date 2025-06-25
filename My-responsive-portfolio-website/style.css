@@ -112,7 +112,7 @@ section .title::after{
 }
 .navbar .menu li a{
     display: block;
-    color: #fff;
+    color: #ffffff;
     font-size: 18px;
     font-weight: 500;
     margin-left: 25px;
@@ -163,9 +163,9 @@ section .title::after{
 /* home section styling */
 .home{
     display: flex;
-    background: url("images/banner.jpg") no-repeat center;
+    background-color: #000000;
     height: 100vh;
-    color: #fff;
+    color: #ffffff;
     min-height: 500px;
     background-size: cover;
     background-attachment: fixed;
@@ -359,11 +359,11 @@ section .title::after{
     top: 0;
     background: #007bff;
 }
-.skills-content .right .html::before{ width: 90%; }
-.skills-content .right .css::before{ width: 60%; }
+.skills-content .right .html::before{ width: 95%; }
+.skills-content .right .css::before{ width: 90%; }
 .skills-content .right .js::before{ width: 80%; }
-.skills-content .right .php::before{ width: 50%; }
-.skills-content .right .mysql::before{ width: 70%; }
+.skills-content .right .react::before{ width: 90%; }
+.skills-content .right .node::before{ width: 70%; }
 
 /* teams section styling */
 .teams .title::after{
@@ -443,6 +443,9 @@ section .title::after{
 }
 .contact .contact-content .left p{
     text-align: justify;
+}
+.contact {
+    bottom: black;
 }
 .contact .contact-content .left .icons{
     margin: 10px 0;
