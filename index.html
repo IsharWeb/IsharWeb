@@ -2,44 +2,94 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>IsharWeb - Portfolio Projects</title>
+    <title>🌐 IsharWeb - My Portfolio Projects</title>
     <style>
         body {
+            background-color: #000;
+            color: #fff;
             font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            color: #007bff;
-        }
-        ul {
-            list-style-type: none;
+            margin: 0;
             padding: 0;
         }
-        li {
-            margin: 15px 0;
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
         }
-        a {
+        h1 {
+            color: #00bfff;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #aaa;
+        }
+        .project-box {
+            background: #fff;
+            color: #000;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .project-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+        }
+        .project-box h2 {
+            margin-bottom: 10px;
+        }
+        .project-box a {
             text-decoration: none;
-            color: #333;
-            font-size: 20px;
-            transition: 0.3s;
-        }
-        a:hover {
             color: #007bff;
+            font-weight: bold;
+        }
+        .project-box a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            margin-top: 50px;
+            color: #555;
+            font-size: 14px;
+        }
+        @media (max-width: 600px) {
+            .project-box {
+                padding: 15px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>👋 Welcome to IsharWeb Portfolio Projects</h1>
-    <p>Click any project below to view it live:</p>
-    <ul>
-        <li><a href="https://isharweb.github.io/IsharWeb/responsive-portfolio-website/" target="_blank">Responsive Portfolio Website</a></li>
-        <li><a href="https://isharweb.github.io/IsharWeb/ishar-2-portfolio/" target="_blank">Ishar 2 Portfolio</a></li>
-        <li><a href="https://isharweb.github.io/IsharWeb/ishar-new-portfolio/" target="_blank">Ishar New Portfolio</a></li>
-        <li><a href="https://isharweb.github.io/IsharWeb/portfolioTemplate/" target="_blank">Portfolio Template</a></li>
-        <li><a href="https://isharweb.github.io/IsharWeb/sempleportpolio/" target="_blank">Semple Portfolio</a></li>
-    </ul>
+
+    <div class="container">
+        <h1>👋 Welcome to Muhammad Ishar's Portfolio Projects</h1>
+        <p>Click any project below to view it live on GitHub Pages:</p>
+
+        <div class="project-box">
+            <h2>My Responsive Portfolio Website</h2>
+            <a href="https://isharweb.github.io/IsharWeb/My-responsive-portfolio-website/" target="_blank">View Project →</a>
+        </div>
+
+        <div class="project-box">
+            <h2>Ishar 2 Portfolio</h2>
+            <a href="https://isharweb.github.io/IsharWeb/ishar-2-portfolio/" target="_blank">View Project →</a>
+        </div>
+
+        <div class="project-box">
+            <h2>Ishar New Portfolio</h2>
+            <a href="https://isharweb.github.io/IsharWeb/ishar-new-portfolio/" target="_blank">View Project →</a>
+        </div>
+
+        <div class="project-box">
+            <h2>Semple Portfolio</h2>
+            <a href="https://isharweb.github.io/IsharWeb/semple-portfolio/" target="_blank">View Project →</a>
+        </div>
+
+        <footer>
+            <p>© 2025 Created by Muhammad Ishar - Frontend Developer | GitHub: <a href="https://github.com/IsharWeb" target="_blank">@IsharWeb</a></p>
+        </footer>
+    </div>
+
 </body>
 </html>
